@@ -6,57 +6,11 @@
 /*   By: pedperei <pedperei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 13:07:04 by pedperei          #+#    #+#             */
-/*   Updated: 2023/01/01 23:57:53 by pedperei         ###   ########.fr       */
+/*   Updated: 2023/01/02 00:03:01 by pedperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-/* void	deliver_msg(int pid, const char *msg)
-{
-	int				i;
-	int				n_bits;
-	unsigned char	c;
-
-	i = 0;
-	while (msg[i] != '\0')
-	{
-		n_bits = 0;
-		c = msg[i];
-		while (n_bits < 8)
-		{
-			if ((c >> n_bits) & 0b00000001 == 1)
-				kill(pid, SIGUSR1);
-			else
-				kill(pid, SIGUSR2);
-			pause();
-			n_bits++;
-		}
-		i++;
-	}
-} */
-
-/* void	send_success(int pid, char *nl)
-{
-	int	i;
-	int	n_bits;
-
-	i = 0;
-	while (nl[i] != '\0')
-	{
-		n_bits = 0;
-		while (n_bits < 8)
-		{
-			if ((nl[i] >> n_bits) & 0b00000001 == 1)
-				kill(pid, SIGUSR1);
-			else
-				kill(pid, SIGUSR2);
-			usleep(1000);
-			n_bits++;
-		}
-		i++;
-	}
-} */
 
 void	handle_sigusr(int sig)
 {
